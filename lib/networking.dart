@@ -4,7 +4,7 @@ import 'dart:convert';
 class NetworkModel {
   final url;
 
-  NetworkModel(this.url);
+  NetworkModel({this.url});
 
   Future getData() async {
     http.Response response = await http.get(url);

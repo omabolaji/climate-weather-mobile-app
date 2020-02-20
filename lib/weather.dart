@@ -10,7 +10,7 @@ class WeatherLocationData {
   Future<dynamic> getCityWeather(String cityName) async {
     var url =
         'https://api.openweathermap.org/data/2.5/weatherss?q=$cityName&appid=$apiKey&units=metric';
-    NetworkModel networkModel = NetworkModel(url);
+    NetworkModel networkModel = NetworkModel(url: url);
 
     var weatherData = await networkModel.getData();
 
@@ -26,7 +26,8 @@ class WeatherLocationData {
 //    longitude = locationStatus.longitude;
 
     NetworkModel networkModel = NetworkModel(
-        'https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=$apiKey&units=metric');
+        url:
+            'https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=$apiKey&units=metric');
 
     var weatherData = await networkModel.getData();
 
