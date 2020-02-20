@@ -35,7 +35,8 @@ class _LocationScreenState extends State<LocationScreen> {
         cityName = '';
         weatherMessage = 'Unable to get weather data!';
       } else {
-        double temp = weatherData['main']['temp'];
+        double temp = weatherData['main']['temp'].toDouble();
+        //temperature = weatherData['main']['temp'];
         temperature = temp.toInt();
         var condition = weatherData['weather'][0]['id'];
         weatherIcon = weatherLocationData.getWeatherIcon(condition);
@@ -109,9 +110,9 @@ class _LocationScreenState extends State<LocationScreen> {
                 child: Row(
                   children: <Widget>[
                     Text(
-                      '$temperature',
+                      '$temperature°',
                       style: TextStyle(
-                        fontSize: 100.0,
+                        fontSize: 80.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -119,7 +120,7 @@ class _LocationScreenState extends State<LocationScreen> {
                       weatherIcon,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 100.0,
+                        fontSize: 50.0,
                       ),
                     ),
                   ],

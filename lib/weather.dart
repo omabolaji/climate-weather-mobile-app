@@ -1,3 +1,6 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
+
 import 'location.dart';
 import 'networking.dart';
 
@@ -36,19 +39,19 @@ class WeatherLocationData {
 
   String getWeatherIcon(int condition) {
     if (condition < 300) {
-      return 'snow';
+      return 'snowny';
     } else if (condition < 400) {
-      return 'high snow';
+      return 'snow';
     } else if (condition < 600) {
-      return 'rain';
+      return ' rain';
     } else if (condition < 700) {
-      return 'ice';
+      return ' ice';
     } else if (condition < 800) {
-      return 'block ice';
+      return ' ice block';
     } else if (condition == 800) {
-      return 'sunny';
+      return ' sunny';
     } else if (condition <= 804) {
-      return 'little cold';
+      return ' cold';
     } else {
       return 'I don\'t know';
     }
